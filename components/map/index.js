@@ -29,12 +29,3 @@ class Map {
     localStorage.setItem(name, arr);
   }
 }
-
-// Set local storage
-// Width, Height
-console.log(
-  {
-    'height': data[0].map[0],
-    'width': data[0].map[1]
-  }
-)
