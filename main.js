@@ -5,3 +5,4 @@ import './src/scss/app.scss'
 import './components/content/index.js';
 import './components/compass/index.js';
 import './components/map/index.js';
+import './components/boat/index.js';

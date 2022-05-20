@@ -1,0 +1,18 @@
+.boat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include rem((width: 40px));
+  @include rem((height: 40px));
+
+  @include transition(all, 2s);
+  @include ha();
+
+  @include background-image(
+    contain,
+    center center,
+    false,
+    false,
+    './src/img/boat.png'
+  );
+}

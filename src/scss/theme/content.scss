@@ -1,8 +1,5 @@
 .content {
   @include rem((margin-top: -(spacing(1))));
-  margin-left: auto;
-  margin-right: auto;
-  @include rem((max-width: 400px));
 
   a:not(.btn__default) {
     color: color(content, link);

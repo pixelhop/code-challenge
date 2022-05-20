@@ -1,0 +1,20 @@
+[
+  {
+    "name": "HMS Aye Aye",
+    "location": [1, 1],
+    "direction": "E",
+    "instructions": "RFRFRFRF"
+  },
+  {
+    "name": "HMS Fried Egg Jellyfish",
+    "location": [3, 2],
+    "direction": "N",
+    "instructions": "FRRFLLFFRRFLL"
+  },
+  {
+    "name": "HMS Lumpsucker",
+    "location": [0, 3],
+    "direction": "W",
+    "instructions": "LLFFFLFLFL"
+  }
+]
