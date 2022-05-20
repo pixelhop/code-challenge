@@ -26,6 +26,16 @@ document.querySelector('.js-componentMap').appendChild(map)
 // Map CLASS static functions
 class Map {
   static setLocalStorage(name, arr) {
-    localStorage.setItem(name, arr);
+    localStorage.setItem(name, JSON.stringify(arr));
   }
 }
+
+// Set local storage
+// Width, Height
+Map.setLocalStorage(
+  'mapDetails',
+  {
+    'height': data[0].map[0],
+    'width': data[0].map[1]
+  }
+)
