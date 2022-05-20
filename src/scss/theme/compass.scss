@@ -1,0 +1,6 @@
+.compass {
+  @include rem((max-width: 160px));
+  margin-left: auto;
+  margin-right: auto;
+  @include rem((margin-top: spacing(2)));
+}
