@@ -1,0 +1,45 @@
+// https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
+@function vars($var-name, $var-variant:null) {
+  @if ($var-variant != null) {
+    @return map-get(map-get($vars, $var-name), $var-variant);
+  }
+
+  @else {
+    @return map-get($vars, $var-name);
+  }
+}
+
+$vars: (
+  type: (
+    med: 16px,
+    lrg: 32px
+  ),
+  layout: (
+    browser-context: 16px,
+    spacing: 16px
+  ),
+  brake-points: (
+    zero: 0,
+    sml: 320px,
+    med: 768px,
+    lrg: 1024px,
+    xlrg: 1280px,
+    xxlrg: 1520px
+  ),
+  vh: (
+    fullscreen: 100vh,
+    half: 50vh,
+    one-third: 33.333333vh,
+    two-third: 66.666666vh
+  )
+);
+
+$browser-context: vars(layout, browser-context);
+$max-width: vars(brake-points, xlrg);
+$spacing: vars(layout, spacing);
+$zero: vars(brake-points, zero);
+$sml: vars(brake-points, sml);
+$med: vars(brake-points, med);
+$lrg: vars(brake-points, lrg);
+$xlrg: vars(brake-points, xlrg);
+$xxlrg: vars(brake-points, xxlrg);

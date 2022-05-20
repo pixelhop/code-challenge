@@ -1,0 +1,7 @@
+@function intrinsic($width, $height) {
+  @return ($height/$width) * 100%;
+}
+
+// .padding {
+  //   padding-bottom: intrinsic(600, 960);
+  // }

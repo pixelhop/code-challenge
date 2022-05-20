@@ -1,0 +1,9 @@
+@mixin replace() {
+  display: block;
+  overflow: hidden;
+
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  text-indent: -2000%;
+}
