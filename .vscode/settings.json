@@ -1,0 +1,24 @@
+{
+    /* editor configuration */
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.trimAutoWhitespace": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    /* eslint */
+    "eslint.alwaysShowStatus": true,
+    "eslint.workingDirectories": [{ "mode": "auto" }],
+    /* search */
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/dist": true
+    },
+    /* files */
+    "files.insertFinalNewline": false,
+    "files.trimTrailingWhitespace": true,
+    /* typescript */
+    "typescript.tsdk": "node_modules/typescript/lib",
+}
