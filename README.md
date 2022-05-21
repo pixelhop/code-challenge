@@ -1,5 +1,18 @@
 # Pixelhop - Code Challenge
 
+## Review instructions
+
+```
+# initial install
+npm i
+# production build
+npm run compile:prod
+# development build
+npm run compile:dev
+# preview
+npm run serve
+```
+
 ## Introduction
 Thanks for taking the time to complete our code challenge. We hope you find it interesting to complete and if there is anything that is not clear in these instructions please don't hesitate to ask us.
 
