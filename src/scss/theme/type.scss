@@ -1,0 +1,16 @@
+@mixin typeBtnDefault() {
+  @include rem((font-size: vars(type, med)));
+  text-align: center;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+@mixin typeH1() {
+  @include rem((font-size: vars(type, lrg)));
+  @include f-medium();
+  line-height: 1.2;
+}
+
+@mixin typeBody() {
+  @include rem((font-size: vars(type, med)));
+}

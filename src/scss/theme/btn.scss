@@ -1,0 +1,48 @@
+.btn {
+  display: block;
+
+  &__default {
+    position: relative;
+    display: inline-block;
+    @include rem((padding: spacing(0.5) spacing(1)));
+
+    background-color: color(btnDefault, bg);
+
+    color: color(btnDefault, color);
+    text-transform: uppercase;
+    @include typeBtnDefault();
+
+    &:active {
+      background-color: darken(color(btnDefault, bg), 10%);
+    }
+
+    @include mqHover() {
+      cursor: pointer;
+
+      @include ha();
+      @include transition(all, 200ms);
+
+      &:hover {
+        background-color: darken(color(btnDefault, bg), 20%);
+      }
+
+      &:focus {
+        @include rem((box-shadow: 0 0 0 3px rgba(color(btnDefault, bg), 0.2)));
+      }
+
+      &:active {
+        background-color: darken(color(btnDefault, bg), 10%);
+
+        color: color(btnDefault, color);
+      }
+    }
+
+    &[disabled],
+    &.is-disabled {
+      filter: grayscale(100%);
+      opacity: 0.6;
+
+      @include disableInteraction();
+    }
+  }
+}

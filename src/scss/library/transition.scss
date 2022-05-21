@@ -1,0 +1,29 @@
+// @include transition(color, 2s, true);
+@mixin transition($property: color, $speed: 200ms, $easing: ease-in-out) {
+  transition: $property $speed $easing;
+}
+
+// @include transition-property(color, background-color);
+@mixin transition-property($propery...) {
+  transition-property: $propery;
+}
+
+// @include transition-duration(200ms);
+@mixin transition-duration($duration) {
+  transition-duration: $duration;
+}
+
+// @include transition-timing(ease-in-out);
+@mixin transition-timing($timing) {
+  transition-timing-function: $timing;
+}
+
+// @include transition-delay(1ms);
+@mixin transition-delay($delay) {
+  transition-delay: $delay;
+}
+
+// @include animation-delay(1ms);
+@mixin animation-delay($delay) {
+  animation-delay: $delay;
+}

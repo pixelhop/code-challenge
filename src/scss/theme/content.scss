@@ -1,0 +1,59 @@
+.content {
+  @include rem((margin-top: -(spacing(1))));
+
+  a:not(.btn__default) {
+    color: color(content, link);
+
+    @include mqHover {
+      cursor: pointer;
+
+      &:active,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  img {
+    @include rem((margin-top: spacing(1)));
+  }
+
+  .btn,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @include rem((padding-top: spacing(1)));
+
+    img {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    @include rem((padding-top: spacing(0.5)));
+
+    li {
+      @include rem((margin-top: spacing(0.5)));
+      @include rem((padding-left: spacing(0.5)));
+
+      @include typeBody();
+      list-style: disc;
+    }
+  }
+
+  h1 {
+    @include typeH1();
+  }
+
+  p {
+    @include typeBody();
+  }
+
+  &.is-center {
+    text-align: center;
+  }
+}

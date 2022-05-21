@@ -1,0 +1,99 @@
+.l-row {
+  $this: &;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: percentageCalc(1);
+
+  &.is-align-center {
+    align-items: center;
+  }
+
+  &.is-algin-top {
+    align-items: flex-start;
+  }
+
+  &.is-algin-bottom {
+    align-items: flex-end;
+  }
+
+  &.no-gutter {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__col {
+    width: percentageCalc(1);
+    @include rem((padding-left: spacing(1)));
+    @include rem((padding-right: spacing(1)));
+
+    &.is-relative {
+      position: relative;
+    }
+
+    &.is-left {
+      text-align: left;
+    }
+
+    &.is-right {
+      text-align: right;
+    }
+
+    &.is-center {
+      text-align: center;
+    }
+
+    &.is-centered {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &.is-half {
+      width: column-width(2, 1);
+    }
+
+    &.is-1-third {
+      width: column-width(3, 1);
+    }
+
+    &.is-2-third {
+      width: column-width(3, 2);
+    }
+
+    &.no-gutter {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &.no-gutter-right {
+      padding-right: 0;
+    }
+
+    &.no-gutter-left {
+      padding-left: 0;
+    }
+
+    @include mq($sml) {
+      &.is-sml-half {
+        width: column-width(2, 1);
+      }
+
+      &.is-sml-1-third {
+        width: column-width(3, 1);
+      }
+
+      &.is-sml-2-third {
+        width: column-width(3, 2);
+      }
+    }
+  }
+
+  #{$this} {
+    width: auto;
+    max-width: none;
+    @include rem((margin-left: -(spacing(1))));
+    @include rem((margin-right: -(spacing(1))));
+  }
+}

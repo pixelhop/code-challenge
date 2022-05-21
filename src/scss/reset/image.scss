@@ -1,0 +1,13 @@
+img {
+  display: block;
+  border: 0;
+  width: auto;
+  max-width: percentageCalc(1);
+  height: auto;
+}
+
+svg {
+  display: block;
+  width: percentageCalc(1);
+  height: percentageCalc(1);
+}

@@ -1,0 +1,33 @@
+@function color($color-name, $color-variant:null) {
+  @if ($color-variant != null) {
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
+$dark: #000;
+$light: #fff;
+$pink: #fa92ca;
+$green: #2ed47a;
+
+$colors: (
+  base: (
+    dark: $dark,
+    hover: $pink,
+    light: $light,
+    selection: $pink,
+    bg: $green
+  ),
+  results: (
+    bg: $pink
+  ),
+  content: (
+    body: $dark,
+    link: $pink
+  ),
+  btnDefault: (
+    color: $dark,
+    bg: $pink
+  )
+);

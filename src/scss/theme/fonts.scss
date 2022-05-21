@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@mixin f-body() {
+  font-family: 'VT323', monospace;
+  font-style: normal;
+}
+
+@mixin f-light() {
+  font-weight: 300;
+}
+
+@mixin f-regular() {
+  font-weight: 400;
+}
+
+@mixin f-medium() {
+  font-weight: 600;
+}
+
+@mixin f-bold() {
+  font-weight: 800;
+}
+
+@mixin f-italic() {
+  font-style: italic;
+}

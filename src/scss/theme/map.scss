@@ -1,0 +1,15 @@
+.map {
+  overflow: hidden;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  @include rem((margin-top: spacing(2)));
+
+  @include background-image(
+    cover,
+    center center,
+    false,
+    false,
+    './src/img/map.jpg'
+  );
+}

@@ -1,0 +1,14 @@
+html {
+  min-height: vars(vh, fullscreen);
+  overflow-x: hidden;
+
+  background-color: color(base, bg);
+
+  @include f-body();
+  @include f-regular();
+  color: color(content, body);
+  line-height: 1.5;
+  @include fontSmoothing();
+  text-rendering: optimizeSpeed;
+  font-size: percentage(calc(($browser-context) / $browser-context));
+}

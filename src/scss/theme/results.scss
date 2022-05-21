@@ -1,0 +1,17 @@
+.results {
+  position: fixed;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  @include rem((padding: spacing(1) spacing(2) spacing(2)));
+  @include rem((max-width: 300px));
+
+  @include transition(all, 1s);
+  @include ha();
+
+  background-color: color(results, bg);
+
+  &.is-active {
+    left: 0;
+  }
+}

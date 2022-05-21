@@ -1,0 +1,36 @@
+@mixin background-image($property: cover, $position: center center, $repeat: false, $fixed: false, $image: false) {
+  background-size: $property;
+  background-position: $position;
+
+  @if $repeat {
+    background-repeat: repeat;
+  } @else {
+    background-repeat: no-repeat;
+  }
+
+  @if $fixed {
+    background-attachment: fixed;
+  }
+
+  @if $image {
+    background-image: url($image);
+  }
+}
+
+// @include background-image();
+// @include background-image(contain, center center, true, false, image-url);
+
+@mixin object-fit($fit: cover, $position: null) {
+  -o-object-fit: $fit;
+  object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+    object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}
+
+// @include object-fit(contain);
+// @include object-fit(cover, top);

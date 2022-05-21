@@ -1,0 +1,16 @@
+.l-container {
+  display: flex;
+  min-height: vars(vh, fullscreen);
+  align-items: center;
+  position: relative;
+  @include rem((padding-bottom: spacing(2)));
+  margin-left: auto;
+  margin-right: auto;
+  @include rem((max-width: 600px));
+
+  &__block {
+    position: relative;
+    width: 100%;
+    @include rem((padding-top: spacing(2)));
+  }
+}

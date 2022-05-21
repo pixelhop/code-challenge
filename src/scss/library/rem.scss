@@ -1,0 +1,35 @@
+// Example:
+// @include rem((margin: 20px));
+// Example with non-pixel values (non-pixel values will not be modified):
+// @include rem((margin: 20px auto 1em));
+// Example with multiple properties:
+// @include rem((
+//   margin: 20px,
+//   font-size: 16px
+// ));
+// https://github.com/guardian/guss-rem/blob/master/_rem.scss
+@function rem($value, $baseline: $browser-context) {
+  @if $value == 0 {
+    @return 0;
+  }
+  @if type-of($value) == list {
+    $result: ();
+    @each $e in $value {
+      $result: append($result, rem($e, $baseline));
+    }
+    @return $result;
+  } @else {
+    @return if(type-of($value) == number and unit($value) == px, calc($value / $baseline) * 1rem, $value);
+  }
+}
+
+
+@mixin rem($properties) {
+  @each $property, $value in $properties {
+    @if (type-of($value) == number and $value != 0) {
+      $value: if(unitless($value), $value * 1px, $value);
+    }
+    // #{$property}: $value;
+    #{$property}: rem($value);
+  }
+}
