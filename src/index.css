@@ -1,0 +1,23 @@
+body {
+    background-color: #212529;
+}
+
+.__monospace {
+    font-family: 'Courier New', Courier, monospace;
+}
+.__output-wrapper {
+    color: #f6f6f6;
+}
+.__output-wrapper .warning,
+.__output-wrapper .warning b {
+    color: orange;
+}
+
+.__output-wrapper .success,
+.__output-wrapper .success b {
+    color: green;
+}
+
+.__output-wrapper b {
+    color: #fff;
+}

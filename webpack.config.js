@@ -1,6 +1,8 @@
 /* eslint-disable */
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env) => {
     // use the --env.production switch to switch between development & production builds
@@ -21,6 +23,14 @@ module.exports = (env) => {
                     use: 'ts-loader',
                     exclude: /node_modules/,
                 },
+                {
+                    test: /\.css$/i,
+                    use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                },
+                {
+                    test: /\.vue$/,
+                    loader: 'vue-template-loader',
+                },
             ],
         },
         resolve: {
@@ -30,6 +40,16 @@ module.exports = (env) => {
             filename: 'bundle.min.js',
             path: path.resolve('dist'),
         },
+        plugins: [
+            new MiniCssExtractPlugin(),
+            new HtmlWebpackPlugin({
+                title: 'Code Challenge',
+                filename: 'index.html',
+                template: 'src/index.html',
+                inject: 'body',
+                hash: true,
+            }),
+        ],
     };
 
     // setup terser plugin for production builds
