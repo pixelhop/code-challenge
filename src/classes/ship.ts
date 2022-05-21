@@ -19,11 +19,17 @@ export class Ship {
         return this._lost;
     }
 
-    turn(direction: Direction): void {
-        this.heading = angleToHeading(turnAngle(headingToAngle(this.heading), direction));
+    clone(): Ship {
+        return new Ship(this.x, this.y, this.heading);
     }
 
-    forward(): void {
+    /* start chain'able methods */
+    turn(direction: Direction): Ship {
+        this.heading = angleToHeading(turnAngle(headingToAngle(this.heading), direction));
+        return this;
+    }
+
+    forward(): Ship {
         // next, adjust based on our heading
         if (this.heading === 'N') {
             this.x += 0;
@@ -38,9 +44,12 @@ export class Ship {
             this.x += -1;
             this.y += 0;
         }
+        return this;
     }
 
     lost() {
         this._lost = true;
+        return this;
     }
+    /* end chain'able methods */
 }
