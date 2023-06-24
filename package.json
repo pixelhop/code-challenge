@@ -16,6 +16,7 @@
   "dependencies": {
     "@vueuse/head": "1.1.26",
     "pinia": "2.1.4",
+    "tailwindcss-bg-patterns": "^0.2.0",
     "vue": "3.3.4",
     "vue-router": "4.2.2"
   },
