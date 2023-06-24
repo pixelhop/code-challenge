@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Dialog from '@/components/DialogComponent.vue'
-import GridSize from '@/components/GridSize.vue'
-import ShipInfo from '@/components/ShipInfo.vue'
-import ShipMovement from '@/components/ShipMovement.vue'
-import GameOutput from '@/components/GameOutput.vue'
+import Dialog from '@/components/DialogComponent.vue';
+import GridSize from '@/components/GridSize.vue';
+import ShipInfo from '@/components/ShipInfo.vue';
+import ShipMovement from '@/components/ShipMovement.vue';
+import GameOutput from '@/components/GameOutput.vue';
 
-import { useStore } from '@/store.ts'
-import { storeToRefs } from 'pinia'
+import { useStore } from '@/store.ts';
+import { storeToRefs } from 'pinia';
 
 // useRoute, useHead, and HelloWorld are automatically imported. See vite.config.ts for details.
 const route = useRoute();
@@ -26,11 +26,21 @@ useHead({
 });
 
 // store
-const store = useStore()
-const { currentStep } = storeToRefs(store)
+const store = useStore();
+const { currentStep } = storeToRefs(store);
 
 // data
 const isOpen = ref(false);
+
+// methods
+const nextStep = () => {
+  if (currentStep.value !== 4) {
+    // increment step value
+    store.nextStep();
+  } else {
+    isOpen.value = false;
+  }
+};
 </script>
 import FooterComponent from '@/components/FooterComponent.vue'
 
@@ -104,7 +114,7 @@ import FooterComponent from '@/components/FooterComponent.vue'
           <div class="text-center space-x-4">
             <button
               class="button text-center transition-all duration-200 cursor-pointer rounded-full text-white bg-purple-500 hover:bg-purple-600 focus:bg-purple-600 px-6 py-2.5"
-              @click="isOpen = false"
+              @click="nextStep()"
             >
               Close
             </button>
