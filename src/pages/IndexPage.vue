@@ -18,9 +18,9 @@ useHead({
 </script>
 
 <template>
-  <div class="relative py-8">
+  <div class="relative py-8 homepage">
     <div
-      class="absolute inset-0 bg-[url(/img/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"
+      class="absolute inset-0 w-full h-full pattern-boxes pattern-blue-500 pattern-bg-transparent pattern-opacity-20 pattern-size-16"
     ></div>
     <div
       class="container relative max-w-2xl mx-auto bg-white shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5"
@@ -42,3 +42,9 @@ useHead({
     </div>
   </div>
 </template>
+
+<style>
+.homepage {
+  height: 100vh;
+}
+</style>
