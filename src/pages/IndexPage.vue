@@ -35,6 +35,19 @@ import FooterComponent from '@/components/FooterComponent.vue'
             features pre-configured as possible. If you don't need something,
             just remove it!
           </p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <button
+              type="button"
+              class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Get started
+            </button>
+            <router-link to="/instructions">
+              <button class="text-sm font-semibold leading-6 text-gray-900">
+                Learn more <span aria-hidden="true">→</span>
+              </button>
+            </router-link>
+          </div>
         </div>
       </main>
       <FooterComponent></FooterComponent>
