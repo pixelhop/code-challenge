@@ -35,6 +35,22 @@ import FooterComponent from '@/components/FooterComponent.vue'
             positions while taking into account boundaries and warning markers
             from previously lost ships.
           </p>
+          <!-- DELETE BElOw -->
+          <p>
+            TODO ITEMS
+          </p>
+          <ul>
+            <li>add dialog</li>
+            <li>set current step in Pinia</li>
+            <li>have the following steps for the flow of game play</li>
+              <ol>
+                <li>Get grid size</li>
+                <li>Get Ship info</li>
+                <li>Get Ship's movements</li>
+                <li>Get Output</li>
+                <li>Play again or quit game</li>
+              </ol>
+          </ul>
           <div class="mt-10 flex items-center justify-center gap-x-6">
             <button
               type="button"
