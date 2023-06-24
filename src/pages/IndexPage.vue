@@ -29,11 +29,11 @@ import FooterComponent from '@/components/FooterComponent.vue'
       <main>
         <div class="p-4 mx-auto prose md:px-6 prose-indigo sm:rounded-md">
           <h1>Ocean Grid Navigator</h1>
-
-          <p>
-            The idea of this template is to bundle as many often used and useful
-            features pre-configured as possible. If you don't need something,
-            just remove it!
+          <p class="pb-4 text-xl leading-relaxed tracking-wide text-gray-700">
+            In this grid-based simulation game, players control ships on the
+            ocean's surface, issuing instructions to determine the ships' final
+            positions while taking into account boundaries and warning markers
+            from previously lost ships.
           </p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
             <button
