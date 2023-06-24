@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import Dialog from '@/components/DialogComponent.vue';
+import Dialog from '@/components/DialogComponent.vue'
+import GridSize from '@/components/GridSize.vue'
+import ShipInfo from '@/components/ShipInfo.vue'
+import ShipMovement from '@/components/ShipMovement.vue'
+import GameOutput from '@/components/GameOutput.vue'
+
+import { useStore } from '@/store.ts'
+import { storeToRefs } from 'pinia'
 
 // useRoute, useHead, and HelloWorld are automatically imported. See vite.config.ts for details.
 const route = useRoute();
@@ -18,6 +25,11 @@ useHead({
   ],
 });
 
+// store
+const store = useStore()
+const { currentStep } = storeToRefs(store)
+
+// data
 const isOpen = ref(false);
 </script>
 import FooterComponent from '@/components/FooterComponent.vue'
@@ -81,12 +93,10 @@ import FooterComponent from '@/components/FooterComponent.vue'
 
         <!-- Dialog Content -->
         <template #content>
-          <p class="text-gray-600 leading-relaxed text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+          <GridSize v-if="currentStep === 1"></GridSize>
+          <ShipInfo v-if="currentStep === 2"></ShipInfo>
+          <ShipMovement v-if="currentStep === 3"></ShipMovement>
+          <GameOutput v-if="currentStep === 4"></GameOutput>
         </template>
 
         <!-- Dialog Footer -->
