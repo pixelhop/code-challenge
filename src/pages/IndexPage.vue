@@ -76,7 +76,7 @@ import FooterComponent from '@/components/FooterComponent.vue'
       <Dialog :open="isOpen" @close="isOpen = false">
         <!-- Dialog Header -->
         <template #header>
-          <h2 class="font-bold text-lg text-center">Dialog Title</h2>
+          <h2 class="font-bold text-lg text-center">Play Game</h2>
         </template>
 
         <!-- Dialog Content -->
