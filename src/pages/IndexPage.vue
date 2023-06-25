@@ -119,7 +119,7 @@ import FooterComponent from '@/components/FooterComponent.vue'
               :disabled="isDisabled"
               @click="nextStep()"
             >
-              Close
+              Next
             </button>
           </div>
         </template>
