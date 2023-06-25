@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-4">
     <div class="mx-auto prose prose-indigo sm:rounded-md">
       <h2>Grid Size</h2>
       <p class="pb-4 text-xl leading-relaxed tracking-wide text-gray-700">
@@ -41,23 +41,23 @@ onMounted(() => {
 
 const handleInput = (event: Event) => {
   const target = event.target as HTMLButtonElement;
-	if (target) {
-		showErrorText.value = false
-		let gridSize = target.value.toString().trim().split(' ')
-		if (gridSize.length === 2) {
-			// TODO verify grid max value of 50
-    	const isInvalid = gridSize.some((item: string) => +item > 50)
-			if (isInvalid) {
-				// TODO show error text
-				showErrorText.value = true;
-			} else {
-				// TODO store values in store
-				store.setGridSize(+gridSize[0], +gridSize[1])
-				// TODO enable button to move to next step
-				store.setButtonDisabled(false)
-			}
-		}
-	}
+  if (target) {
+    showErrorText.value = false;
+    let gridSize = target.value.toString().trim().split(' ');
+    if (gridSize.length === 2) {
+      // TODO verify grid max value of 50
+      const isInvalid = gridSize.some((item: string) => +item > 50);
+      if (isInvalid) {
+        // TODO show error text
+        showErrorText.value = true;
+      } else {
+        // TODO store values in store
+        store.setGridSize(+gridSize[0], +gridSize[1]);
+        // TODO enable button to move to next step
+        store.setButtonDisabled(false);
+      }
+    }
+  }
 };
 </script>
 
