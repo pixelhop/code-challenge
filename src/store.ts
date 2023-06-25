@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const useStore = defineStore('main', {
   state: () => ({
@@ -12,6 +12,7 @@ export const useStore = defineStore('main', {
     currentX: 1,
     currentY: 1,
     currentOrientation: 'E',
+    shipMovements: ['R', 'F', 'R', 'F', 'R', 'F', 'R', 'F'],
   }),
 
   actions: {
@@ -33,6 +34,22 @@ export const useStore = defineStore('main', {
       this.currentY = length;
       this.currentOrientation = orientation;
     },
+    setShipMovements(shipMovements: string[]) {
+      this.shipMovements = shipMovements;
+    },
+    setShipOrientation(orientation: string) {
+      this.currentOrientation = orientation;
+    },
+    setShipGrid(curX: number, curY: number) {
+      this.currentX = curX;
+      this.currentY = curY;
+    },
+    setStep(val: number) {
+      this.currentStep = val;
+    },
+    initializeGame() {
+      this.currentStep = 1;
+    }
   },
 
   getters: {},
