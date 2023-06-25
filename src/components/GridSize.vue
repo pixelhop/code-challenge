@@ -45,15 +45,11 @@ const handleInput = (event: Event) => {
     showErrorText.value = false;
     let gridSize = target.value.toString().trim().split(' ');
     if (gridSize.length === 2) {
-      // TODO verify grid max value of 50
       const isInvalid = gridSize.some((item: string) => +item > 50);
       if (isInvalid) {
-        // TODO show error text
         showErrorText.value = true;
       } else {
-        // TODO store values in store
         store.setGridSize(+gridSize[0], +gridSize[1]);
-        // TODO enable button to move to next step
         store.setButtonDisabled(false);
       }
     }
