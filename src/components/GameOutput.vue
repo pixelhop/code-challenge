@@ -57,12 +57,6 @@ onMounted(() => {
 const isWithinGrid = (curX: number, curY: number) => {
   return curX >= 0 && curY >= 0 && curX <= store.gridX && curY <= store.gridY;
 };
-const handleNext = () => {
-  store.setStep(2);
-};
-const handleEndGame = () => {
-  emit('close');
-};
 </script>
 
 <style scoped></style>
