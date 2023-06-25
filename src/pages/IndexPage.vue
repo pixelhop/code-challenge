@@ -28,6 +28,7 @@ useHead({
 // store
 const store = useStore();
 const { currentStep } = storeToRefs(store);
+const { isDisabled } = storeToRefs(store);
 
 // data
 const isOpen = ref(false);
@@ -114,6 +115,8 @@ import FooterComponent from '@/components/FooterComponent.vue'
           <div class="text-center space-x-4">
             <button
               class="button text-center transition-all duration-200 cursor-pointer rounded-full text-white bg-purple-500 hover:bg-purple-600 focus:bg-purple-600 px-6 py-2.5"
+              :class="{ 'opacity-25 cursor-not-allowed': isDisabled }"
+              :disabled="isDisabled"
               @click="nextStep()"
             >
               Close
